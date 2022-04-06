@@ -1,0 +1,94 @@
+16/03/22
+Logical programming is based on a knowledge base-> FACTS AND RULES
+implies symbol ------ :-
+Computation is based on knowledge base and queries
+
+Functional programming is sequential.
+Logic programming uses abstract models or deals with objects and their relationships
+
+Facts syntax: relation(object1,object2......)
+eg: Tom is a Cat
+Facts syntax: Cat(Tom).
+
+Kunal loves to eat pussy
+Facts syntax: loves_to_eat(kunal, pussy)
+
+Hair is black
+Facts syntax: colour(Hair),black)
+
+Implies   :-
+And       ,
+Or        ;
+
+
+
+
+
+
+
+CLASS WORK:
+:- initialization(main).
+  main :- write('Welcome to JDoodle.com!!').
+  sing_a_song(ananya).
+  listens_to_music(rohit).
+  
+  listens_to_music(ananya) :- sing_a_song(ananya).
+  happy(ananya) :- sing_a_song(ananya).
+  happy(rohit) :- listens_to_music(rohit).
+  plays_guitar(rohit) :- listens_to_music(rohit).
+  
+INPUTS:
+happy(rohit).
+sing_a_song(rohit).
+sing_a_song(ananya).
+plays_guitar(rohit).
+plays_guitar(ananya).
+listens_to_music(ananya).
+
+
+
+
+
+:- initialization(main).
+  main :- write('Welcome to JDoodle.com!!').
+  can_cook(priya).
+  can_cook(jaya).
+  can_cook(tiyasha).
+  likes(priya,jaya) :- can_cook(jaya).
+  likes(priya,tiyasha) :- can_cook(tiyasha).
+  
+INPUTS:
+can_cook(X).
+X=priya ?;
+X=jaya ?;
+X=tiyasha
+
+
+
+
+
+
+
+23/3/2022
+Family
+female(pam).
+female(liz).
+female(pat).
+female(ann).
+male(jim).
+male(bob).
+male(tom).
+male(peter).
+parent(pam,bob).
+parent(tom,bob).
+parent(tom,liz).
+parent(bob,ann).
+parent(bob,pat).
+parent(pat,jim).
+parent(bob,peter).
+parent(peter,jim).
+mother(X,Y):- parent(X,Y),female(X).
+father(X,Y):- parent(X,Y),male(X).
+haschild(X):- parent(X,_).
+sister(X,Y):- parent(Z,X),parent(Z,Y),female(X),X\==Y.
+brother(X,Y):-parent(Z,X),parent(Z,Y),male(X),X\==Y.
